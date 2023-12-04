@@ -5,20 +5,20 @@ logging:
   level:
     org.springframework.security: trace
 
-spring:
-  security:
-    oauth2:
-      authorizationserver:
-        client:
-          admin:
-            registration:
-              client-id: "admin"
-              client-secret: "{noop}password23"
-              client-authentication-methods:
-                - "client_secret_basic"
-              authorization-grant-types:
-                - "client_credentials"
-              redirect-uris:
-                - "http://127.0.0.1:8081/login/oauth2/code/admin"
-              scopes:
-                - "kafka"
+#spring:
+#  security:
+#    oauth2:
+#      authorizationserver:
+#        client:
+#          admin:
+#            registration:
+#              client-id: "admin"
+#              client-secret: "{noop}password23"
+#              client-authentication-methods:
+#                - "client_secret_basic"
+#              authorization-grant-types:
+#                - "client_credentials"
+#              redirect-uris:
+#                - "http://127.0.0.1:8081/login/oauth2/code/admin"
+#              scopes:
+#                - "kafka"
