@@ -1,24 +1,29 @@
 server:
-  port: 9000
+  port: 9999
 
 logging:
   level:
     org.springframework.security: trace
 
-#spring:
-#  security:
-#    oauth2:
-#      authorizationserver:
-#        client:
-#          admin:
-#            registration:
-#              client-id: "admin"
-#              client-secret: "{noop}password23"
-#              client-authentication-methods:
-#                - "client_secret_basic"
-#              authorization-grant-types:
-#                - "client_credentials"
-#              redirect-uris:
-#                - "http://127.0.0.1:8081/login/oauth2/code/admin"
-#              scopes:
-#                - "kafka"
+spring:
+  security:
+    oauth2:
+      authorizationserver:
+        issuer: http://localhost:9999
+        client:
+          admin:
+            registration:
+              client-id: admin
+              client-secret: "{noop}password23"
+              client-name: admin
+              client-authentication-methods:
+                - client_secret_basic
+              authorization-grant-types:
+                - authorization_code
+                - refresh_token
+              redirect-uris:
+                - http://127.0.0.1:8081/login/oauth2/code/admin-authorization_code
+              scopes:
+                - kafka
+                - openid
+debug: true
