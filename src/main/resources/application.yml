@@ -23,7 +23,19 @@ spring:
                 - refresh_token
               redirect-uris:
                 - http://127.0.0.1:8081/login/oauth2/code/admin-authorization_code
+                - https://oauth.pstmn.io/v1/callback
               scopes:
-                - kafka
+                - openid
+          unsecure:
+            registration:
+              client-id: unsecure
+              client-name: unsecure
+              client-authentication-methods:
+                - "none"
+              authorization-grant-types:
+                - authorization_code
+              redirect-uris:
+                - https://oauth.pstmn.io/v1/callback
+              scopes:
                 - openid
 debug: true
