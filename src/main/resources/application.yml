@@ -36,6 +36,8 @@ spring:
                 - authorization_code
               redirect-uris:
                 - https://oauth.pstmn.io/v1/callback
+                - http://localhost:3009
+                - http://localhost:3009/api/callback
               scopes:
                 - openid
 debug: true
